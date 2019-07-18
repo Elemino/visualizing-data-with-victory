@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
+import { VictoryBar, VictoryPie, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
+import { Component } from 'react'
+
+
+
+
 
 const data2012 = [
   {quarter: 1, earnings: 13000},
@@ -30,12 +35,12 @@ const data2015 = [
   {quarter: 4, earnings: 12000}
 ];
 
-class Main extends React.Component {
+class Main extends Component {
   render() {
     return (
       <div>
-        <h1>Victory Tutorial</h1>
-        <VictoryChart
+        <h1>Yearly and monthly budget and expenses</h1>
+        <VictoryBar
           domainPadding={10}
           theme={VictoryTheme.material}
         >
@@ -70,7 +75,7 @@ class Main extends React.Component {
               y={"earnings"}
             />
           </VictoryStack>
-        </VictoryChart>
+        </VictoryBar>
       </div>
     );
   }
